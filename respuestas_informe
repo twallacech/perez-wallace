@@ -1,0 +1,44 @@
+Respuestas Parte dos- Tarea 2
+
+Thomas Wallace
+Raimundo Perez
+
+
+1.¿Qué categoría de features (o combinación) es mejor predictor? 
+
+De acuerdo a mis resultados
+En orden de mejor a peor predictor:
+1.c3 (0.86)
+2.c1 (0.83)
+3.c1c2c3 (0.83)
+4.c2 (0.5)
+
+2. De los 4 modelos generados, ¿qué features (el sentimiento, actividad en la red social, etc..) explican que uno tenga mejor capacidad de predicción que el resto? 
+
+Para esto debemos ver los coeficientes 
+Para c1 el feature que tiene mejor capacidad de predicción es standard derivation de el avergae subjectivity en los comentarios (2.26)
+Para c2 el average polarity en los reviews es el feature que tiene la mejor capacidad de predciccion(0.124)
+Para c3 el indegree es un mucho mejor predictor.(0.254)
+Para c1c2c3 es el avergae subjectivty en los comments en el social network.(8.7/e)
+
+3. Calcule la media y desviación estándar de cada feature, ¿varían mucho las medias y desviaciones standard entre distintas features? ¿Qué efecto podría tener en el modelo de regresión normalizar las features? 
+
+Media y desviación estándar están en el script avergae&sd_features.py estan en el orden dado en la tarea en la parte de categorias. 
+
+Como vemos casi todas son iguales excepto el indegree
+En el average se separa de las demas por minimo 8
+En el standard deviation se seprara de las demas por casi mas de 170
+El resto se encuentran a lo mas a una unidad de la otra, por ende relativamente cerca.
+
+
+Normalizar las features podría dar mejores predicciones ya que esto generaría un modelo mas general y por ende con menos resultados anómalos. Pero al mismo tiempo hacer un modelo tan general podría causar que todas las features tuvieran el mismo peso y por ende predecir que sea un vendedor o no seria 50/50.
+
+
+
+4. Una interpretación de los coeficientes del modelo de regresión lógistica final (con todas las categorías). Particularmente responde la pregunta ¿Cuál es el efecto en la predicción de la variable vendedor si el in_degree aumenta en una unidad?
+
+1.54/e = 0.57 
+por ende el efecto en la predicción será un (e^0.57)=1.76 por ende si el indegree aumenta una unidad habrá un 76% de incremento en la posibilidades (odds) de que sea vendedor.
+
+Viendo mis resultados podemos ver que c3 pudo haber sido calculado incorrectamente
+Como vemos el standard devation y el avergae se alejan tanto que da suspicion. Capaz que esto haya generado una repercusuion en todas las respuetsas y por ende es un error que se esta presente en todo.
